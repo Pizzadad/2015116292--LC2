@@ -27,7 +27,10 @@ namespace _2015116292_PER.Configurations
             HasRequired(eva => eva.Trabajador)
               .WithRequiredPrincipal(eva => eva.Evaluacion);
 
-           
+            HasRequired(eva => eva.Centrodeatencion)
+             .WithRequiredPrincipal(eva => eva.Evaluacion);
+
+
         }
     }
 }

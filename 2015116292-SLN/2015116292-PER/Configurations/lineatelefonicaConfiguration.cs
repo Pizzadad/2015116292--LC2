@@ -13,7 +13,7 @@ namespace _2015116292_PER.Configurations
         public lineatelefonicaConfiguration()
         {
             ToTable("lineatelefonica");
-            HasKey(li => li.admilinea_id);
+            HasKey(li => li.lineatelefonica_id);
 
             HasRequired(li => li.AdmiLinea)
                 .WithMany(li => li._lineatelefonica);

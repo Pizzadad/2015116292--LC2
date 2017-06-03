@@ -66,6 +66,11 @@
     <Compile Include="Configurations\TipoPlanConfiguration.cs" />
     <Compile Include="Configurations\TrabajadorConfiguration.cs" />
     <Compile Include="Configurations\UbigeoConfiguration.cs" />
+    <Compile Include="Migrations\201706032240042_InitialModel.cs" />
+    <Compile Include="Migrations\201706032240042_InitialModel.Designer.cs">
+      <DependentUpon>201706032240042_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +86,11 @@
       <Project>{27947bfb-291c-45fc-896b-6d97ecae97e6}</Project>
       <Name>2015116292-ENT</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706032240042_InitialModel.resx">
+      <DependentUpon>201706032240042_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
