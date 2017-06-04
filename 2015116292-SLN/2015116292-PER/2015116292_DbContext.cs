@@ -4,12 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _2015116292_ENT;
+
 using _2015116292_PER.Configurations;
+using _2015116292_ENT.Entities;
 
 namespace _2015116292_PER
 {
-    class _2015116292_DbContext : DbContext
+   public class _2015116292_DbContext : DbContext
     {
         public DbSet<tipolinea> tipolinea1 { get; set; }
         public DbSet<TipoPlan> TipoPlan1 { get; set; }
