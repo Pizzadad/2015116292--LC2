@@ -10,17 +10,14 @@ namespace _2015116292_PER.Repositories
 {
     public class AdmiLineaRepository : Repository<AdmiLinea>, IAdmiLineaRepository
     {
-        private readonly _2015116292_DbContext _Context;
+       
 
-        public AdmiLineaRepository(_2015116292_DbContext context)
+        public AdmiLineaRepository(_2015116292_DbContext context) : base(context)
         {
-            _Context = context;
+            
         }
 
-        private AdmiLineaRepository()
-        {
-
-        }
+       
     }
 
 }

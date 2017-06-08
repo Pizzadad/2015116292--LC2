@@ -10,16 +10,14 @@ namespace _2015116292_PER.Repositories
 {
     public class ProvinciaRepository : Repository<Provincia>, IProvinciaRepository
     {
-        private readonly _2015116292_DbContext _Context;
+      
 
-        public ProvinciaRepository(_2015116292_DbContext context)
+        public ProvinciaRepository(_2015116292_DbContext context) : base(context)
         {
-            _Context = context;
+            
         }
-        private ProvinciaRepository()
-        {
-
-        }
+       
+     
     }
 
 }

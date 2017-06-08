@@ -10,17 +10,14 @@ namespace _2015116292_PER.Repositories
 {
     public class tipolineaRepository : Repository<tipolinea>, ItipolineaRepository
     {
-        private readonly _2015116292_DbContext _Context;
+        
 
-        public tipolineaRepository(_2015116292_DbContext context)
+        public tipolineaRepository(_2015116292_DbContext context) : base(context)
         {
-            _Context = context;
+            
         }
 
-        private tipolineaRepository()
-        {
-
-        }
+        
     }
 
 }

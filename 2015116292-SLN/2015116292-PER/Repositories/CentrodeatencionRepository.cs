@@ -10,17 +10,14 @@ namespace _2015116292_PER.Repositories
 {
     public class CentrodeatencionRepository : Repository<Centrodeatencion>, ICentrodeatencionRepository
     {
-        private readonly _2015116292_DbContext _Context;
+        
 
-        public CentrodeatencionRepository(_2015116292_DbContext context)
+        public CentrodeatencionRepository(_2015116292_DbContext context) : base(context)
         {
-            _Context = context;
+           
         }
 
-        private CentrodeatencionRepository()
-        {
-
-        }
+      
     }
 }
 

@@ -10,10 +10,7 @@ namespace _2015116292_PER.Repositories
     public class UnityOfWork : IUnityOfWork
     {
         private readonly _2015116292_DbContext _Context;
-        private static UnityOfWork _Instance;
-        private static readonly object _Lock = new object();
-
-
+       
            //
 
            public IAdmiLineaRepository AdmiLinea1 { get; private set; }
@@ -52,9 +49,14 @@ namespace _2015116292_PER.Repositories
 
         public IUbigeoRepository Ubigeo1 { get; private set; }
 
-        private UnityOfWork()
+        public UnityOfWork()
         {
-            _Context = new _2015116292_DbContext();
+
+        }
+
+        private UnityOfWork(_2015116292_DbContext context)
+        {
+            _Context = context;
 
             Departamento1 = new DepartamentoRepository(_Context);
             AdmiLinea1 = new AdmiLineaRepository(_Context);
@@ -76,22 +78,10 @@ namespace _2015116292_PER.Repositories
             Ubigeo1 = new UbigeoRepository(_Context);
         }
 
-        public static UnityOfWork Instance
-        {
-            get
-            {
-                lock (_Lock)
-                {
-                    if (_Instance == null)
-                        _Instance = new UnityOfWork();
- }
-
-
-                return Instance;
-            }
-        }
        
-       public void Dispose()
+
+      
+         public void Dispose()
         {
             _Context.Dispose();
         }
@@ -100,6 +90,9 @@ namespace _2015116292_PER.Repositories
         {
             return _Context.SaveChanges();
         }
-
-     }
+        public void StateModified(object Entity)
+        {
+            _Context.Entry(Entity).State = System.Data.Entity.EntityState.Modified;
+        }
+    }
 }

@@ -14,7 +14,7 @@ namespace _2015116292_ENT.IRepositories
 
         //READS
         
-        TEntity Get(int Id);
+        TEntity Get(string id);
         IEnumerable<TEntity> GetAll();
 
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);

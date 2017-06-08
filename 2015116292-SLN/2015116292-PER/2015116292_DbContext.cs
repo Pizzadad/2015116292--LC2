@@ -30,7 +30,12 @@ namespace _2015116292_PER
         public DbSet<Tipodeevaluacion> Tipodeevaluacion1 { get; set; }
         public DbSet<Trabajador> Trabajador1 { get; set; }
         public DbSet<Ubigeo> Ubigeo1 { get; set; }
-        
+
+        public _2015116292_DbContext() : base("LC2_2015116292")
+        {
+
+        }
+
       		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Configurations.Add(new EvaluacionConfiguration());

@@ -10,16 +10,12 @@ namespace _2015116292_PER.Repositories
 {
     public class UbigeoRepository : Repository<Ubigeo>, IUbigeoRepository
     {
-        private readonly _2015116292_DbContext _Context;
-
-        public UbigeoRepository(_2015116292_DbContext context)
+      
+        public UbigeoRepository(_2015116292_DbContext context) : base(context)
         {
-            _Context = context;
+           
         }
 
-        private UbigeoRepository()
-        {
-
-        }
+       
     }
 }

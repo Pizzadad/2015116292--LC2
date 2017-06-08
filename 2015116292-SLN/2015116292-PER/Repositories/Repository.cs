@@ -6,43 +6,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 
+
 namespace _2015116292_PER.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        void IRepository<TEntity>.Add(TEntity entity)
+        protected readonly _2015116292_DbContext _Context;
+
+        public Repository(_2015116292_DbContext context)
         {
-            throw new NotImplementedException();
+            _Context = context;
         }
 
-        void IRepository<TEntity>.AddRange(IEnumerable<TEntity> entities)
+        public void Add(TEntity entity)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().Add(entity);
         }
 
-        void IRepository<TEntity>.Delete(TEntity entity)
+        public void AddRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().AddRange(entities);
         }
 
-        void IRepository<TEntity>.DeleteRange(IEnumerable<TEntity> entities)
+        public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _Context.Set<TEntity>().Remove(entity);
+        }
+
+        public void DeleteRange(IEnumerable<TEntity> entities)
+        {
+            _Context.Set<TEntity>().RemoveRange(entities);
         }
 
         IEnumerable<TEntity> IRepository<TEntity>.Find(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return _Context.Set<TEntity>().Where(predicate);
         }
 
-        TEntity IRepository<TEntity>.Get(int Id)
+        public TEntity Get(string id)
         {
-            throw new NotImplementedException();
+            return _Context.Set<TEntity>().Find(id);
         }
 
-        IEnumerable<TEntity> IRepository<TEntity>.GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _Context.Set<TEntity>().ToList();
         }
+
+
+
+
+
     }
 }

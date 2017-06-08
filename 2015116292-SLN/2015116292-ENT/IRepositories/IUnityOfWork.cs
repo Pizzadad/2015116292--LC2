@@ -27,6 +27,7 @@ namespace _2015116292_ENT.IRepositories
         ITrabajadorRepository Trabajador1 { get; }
         IUbigeoRepository Ubigeo1 { get; }
 
+        void StateModified(object entity);
         int SaveChanges();
     }
         

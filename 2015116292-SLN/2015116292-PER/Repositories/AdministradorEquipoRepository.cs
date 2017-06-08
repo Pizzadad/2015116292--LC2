@@ -10,17 +10,15 @@ namespace _2015116292_PER.Repositories
 {
     public class AdministradorEquipoRepository : Repository<AdministradorEquipo>, IAdministradorEquipoRepository
     {
-        private readonly _2015116292_DbContext _Context;
+        
 
-        public AdministradorEquipoRepository(_2015116292_DbContext context)
+        public AdministradorEquipoRepository(_2015116292_DbContext context) : base(context)
         {
-            _Context = context;
+           
         }
 
-        private AdministradorEquipoRepository()
-        {
-                
-        }
+     
+
     }
 
 }

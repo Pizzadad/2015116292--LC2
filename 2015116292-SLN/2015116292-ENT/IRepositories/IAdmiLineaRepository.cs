@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace _2015116292_ENT.IRepositories
 {
-  public  interface IAdmiLineaRepository : IRepository<AdmiLinea>
+    public interface IAdmiLineaRepository : IRepository<AdmiLinea>
     {
+        
     }
 }
