@@ -2,6 +2,7 @@
 using _2015116292_ENT.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,11 @@ namespace _2015116292_PER.Configurations
             ToTable("Distrito");
             HasKey(dis => dis.Distrito_id);
 
-            HasRequired(dis => dis.Provincia)
-               .WithMany(dis => dis._Distrito);
+            Property(dis => dis.Distrito_id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(dis => dis.Distrito_nombre)
+                .IsRequired();
         }
     }
 }

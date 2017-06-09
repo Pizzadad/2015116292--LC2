@@ -10,14 +10,16 @@ namespace _2015116292_ENT.Entities
     {
         public string Centrodeatencion_id { get; set; }
         public string Centrodeatencion_nombre { get; set; }
-        public List<Direccion> _Direccion { get; set; }
 
-        public string Evaluacion_id { get; set; }
-        public Evaluacion Evaluacion { get; set; }
+        public Direccion _Direccion { get; set; }
+        public string Direccion_id { get; set; }
+
+        public ICollection<Evaluacion> _Evaluacion { get; private set; }
+
 
         public Centrodeatencion()
         {
-            _Direccion = new List<Direccion>();
+            _Evaluacion = new List<Evaluacion>();
         }
     }
 }

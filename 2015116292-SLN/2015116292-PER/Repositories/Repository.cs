@@ -38,12 +38,12 @@ namespace _2015116292_PER.Repositories
             _Context.Set<TEntity>().RemoveRange(entities);
         }
 
-        IEnumerable<TEntity> IRepository<TEntity>.Find(Expression<Func<TEntity, bool>> predicate)
+       public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
             return _Context.Set<TEntity>().Where(predicate);
         }
 
-        public TEntity Get(string id)
+        public TEntity Get(int? id)
         {
             return _Context.Set<TEntity>().Find(id);
         }

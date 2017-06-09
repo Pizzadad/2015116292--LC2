@@ -11,13 +11,14 @@ namespace _2015116292_ENT.Entities
         public string Direccion_id { get; set; }
         public string Direccion_lugar { get; set; }
 
-        public string Centrodeatencion_id { get; set; }
-        public Centrodeatencion Centrodeatencion { get; set; }
+        public Ubigeo _Ubigeo { get; set; }
+        public string Ubigeo_id { get; set; }
 
-        public List<Ubigeo> _Ubigeo { get; set; }
+        public ICollection<Centrodeatencion> _Centrodeatencion { get; private set; }
+
         public Direccion()
         {
-            _Ubigeo = new List<Ubigeo>();
+            _Centrodeatencion = new List<Centrodeatencion>();
         }
       
     }

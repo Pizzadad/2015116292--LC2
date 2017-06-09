@@ -11,11 +11,7 @@ namespace _2015116292_ENT.Entities
         public string admilinea_id { get; set; }
         public string admilinea_nombre { get; set; }
 
-        public List<lineatelefonica> _lineatelefonica { get; set; }
-
-        public AdmiLinea()
-        {
-            _lineatelefonica = new List<lineatelefonica>();
-        }
+        public lineatelefonica _lineatelefonica { get; set; }
+        public string lineatelefonica_id { get; set; }
     }
 }

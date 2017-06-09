@@ -1,4 +1,4 @@
-﻿@model _2015116292_ENT.Entities.AdmiLinea
+﻿@model _2015116292_ENT.Entities.TipoPlan
 
 @{
     ViewBag.Title = "Details";
@@ -8,20 +8,20 @@
 <h2>Details</h2>
 
 <div>
-    <h4>AdmiLinea</h4>
+    <h4>TipoPlan</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.admilinea_nombre)
+            @Html.DisplayNameFor(model => model.TipoPlan_caracteristica)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.admilinea_nombre)
+            @Html.DisplayFor(model => model.TipoPlan_caracteristica)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.admilinea_id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TipoPlan_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

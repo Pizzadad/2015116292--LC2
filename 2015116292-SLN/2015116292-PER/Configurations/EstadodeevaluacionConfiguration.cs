@@ -2,6 +2,7 @@
 using _2015116292_ENT.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,11 @@ namespace _2015116292_PER.Configurations
             ToTable("Estadodeevaluacion");
             HasKey(est => est.Estadodeevaluacion_id);
 
-            HasRequired(est => est.Evaluacion)
-                .WithMany(est => est._Estadodeevaluacion);
+            Property(est => est.Estadodeevaluacion_id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(est => est.Estadodeevaluacion_estado)
+                .IsRequired();
         }
     }
 }

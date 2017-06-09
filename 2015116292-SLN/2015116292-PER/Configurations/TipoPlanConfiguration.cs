@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _2015116292_ENT;
 using _2015116292_ENT.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2015116292_PER.Configurations
 {
@@ -16,8 +17,11 @@ namespace _2015116292_PER.Configurations
             ToTable("TipoPlan");
             HasKey(ti => ti.TipoPlan_id);
 
-            HasRequired(ti => ti.Plan)
-               .WithMany(t => t._TipoPlan);
+            Property(ti => ti.TipoPlan_id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            Property(ti => ti.TipoPlan_caracteristica)
+                .IsRequired();
         }
       
     }

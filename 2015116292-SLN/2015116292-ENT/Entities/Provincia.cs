@@ -11,14 +11,14 @@ namespace _2015116292_ENT.Entities
         public string Provincia_id { get; set; }
         public string Provincia_nombre { get; set; }
 
-        public string Departamento_id { get; set; }
+        public Distrito _Distrito { get; set; }
+    public string Distrito_id { get; set; }
 
-        public Departamento Departamento { get; set; }
+        public ICollection<Departamento> _Departamento { get; private set; }
 
-        public List<Distrito> _Distrito { get; set; }
         public Provincia()
         {
-            _Distrito = new List<Distrito>();
+            _Departamento = new List<Departamento>();
         }
         
     }

@@ -11,11 +11,14 @@ namespace _2015116292_ENT.Entities
         public string Departamento_id { get; set; }
         public string Departamento_nombre { get; set; }
 
-        public List<Provincia> _Provincia { get; set; }
+        public Provincia _Provincia { get; set; }
+        public string Provincia_id { get; set; }
+
+        public ICollection<Ubigeo> _Ubigeo { get; private set; }
 
         public Departamento()
         {
-            _Provincia = new List<Provincia>();
+            _Ubigeo = new List<Ubigeo>();
         }
      }
 }

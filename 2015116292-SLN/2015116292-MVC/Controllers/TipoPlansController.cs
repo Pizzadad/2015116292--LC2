@@ -8,129 +8,124 @@ using System.Web;
 using System.Web.Mvc;
 using _2015116292_ENT.Entities;
 using _2015116292_PER;
-using _2015116292_PER.Repositories;
 using _2015116292_ENT.IRepositories;
 
 namespace _2015116292_MVC.Controllers
 {
-    public class AdmiLineasController : Controller
+    public class TipoPlansController : Controller
     {
         //private _2015116292_DbContext db = new _2015116292_DbContext();
         private readonly IUnityOfWork _UnityOfWork;
+        // GET: TipoPlans
 
-        public AdmiLineasController(IUnityOfWork unityOfWork)
+        public TipoPlansController(IUnityOfWork unityOfWork)
         {
             _UnityOfWork = unityOfWork;
         }
 
-
-        public AdmiLineasController()
+        public TipoPlansController()
         {
 
         }
-        
-        // GET: AdmiLineas
+
         public ActionResult Index()
         {
-            //return View(unityOfWork.AdmiLinea1.GetAll());
-            return View(_UnityOfWork.AdmiLinea1.GetAll());
-
-           
+            return View(_UnityOfWork.TipoPlan1.GetAll());
         }
 
-        // GET: AdmiLineas/Details/5
-        public ActionResult Details(string id)
+        // GET: TipoPlans/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdmiLinea admiLinea = _UnityOfWork.AdmiLinea1.Get(id);
-            if (admiLinea == null)
+            TipoPlan tipoPlan = _UnityOfWork.TipoPlan1.Get(id);
+            if (tipoPlan == null)
             {
                 return HttpNotFound();
             }
-            return View(admiLinea);
+            return View(tipoPlan);
         }
 
-        // GET: AdmiLineas/Create
+        // GET: TipoPlans/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AdmiLineas/Create
+        // POST: TipoPlans/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "admilinea_id,admilinea_nombre")] AdmiLinea admiLinea)
+        public ActionResult Create([Bind(Include = "TipoPlan_id,TipoPlan_caracteristica")] TipoPlan tipoPlan)
         {
             if (ModelState.IsValid)
             {
-                _UnityOfWork.AdmiLinea1.Add(admiLinea);
+                _UnityOfWork.TipoPlan1.Add(tipoPlan);
                 _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(admiLinea);
+            return View(tipoPlan);
         }
 
-        // GET: AdmiLineas/Edit/5
-        public ActionResult Edit(string id)
+        // GET: TipoPlans/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdmiLinea admiLinea = _UnityOfWork.AdmiLinea1.Get(id);
-            if (admiLinea == null)
+            TipoPlan tipoPlan = _UnityOfWork.TipoPlan1.Get(id);
+            if (tipoPlan == null)
             {
                 return HttpNotFound();
             }
-            return View(admiLinea);
+            return View(tipoPlan);
         }
 
-        // POST: AdmiLineas/Edit/5
+        // POST: TipoPlans/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "admilinea_id,admilinea_nombre")] AdmiLinea admiLinea)
+        public ActionResult Edit([Bind(Include = "TipoPlan_id,TipoPlan_caracteristica")] TipoPlan tipoPlan)
         {
             if (ModelState.IsValid)
             {
-                //db.Entry(admiLinea).State = EntityState.Modified;
-                _UnityOfWork.StateModified(admiLinea);
+                //  _UnityOfWork.Entry(tipoPlan).State = EntityState.Modified;
+                _UnityOfWork.StateModified(tipoPlan);
                 _UnityOfWork.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(admiLinea);
+            return View(tipoPlan);
         }
 
-        // GET: AdmiLineas/Delete/5
-        public ActionResult Delete(string id)
+        // GET: TipoPlans/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AdmiLinea admiLinea = _UnityOfWork.AdmiLinea1.Get(id);
-            if (admiLinea == null)
+            TipoPlan tipoPlan = _UnityOfWork.TipoPlan1.Get(id);
+            if (tipoPlan == null)
             {
                 return HttpNotFound();
             }
-            return View(admiLinea);
+            return View(tipoPlan);
         }
 
-        // POST: AdmiLineas/Delete/5
+        // POST: TipoPlans/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            AdmiLinea admiLinea = _UnityOfWork.AdmiLinea1.Get(id);
-            _UnityOfWork.AdmiLinea1.Delete(admiLinea);
-            _UnityOfWork.SaveChanges();
+            TipoPlan tipoPlan = _UnityOfWork.TipoPlan1.Get(id);
+            _UnityOfWork.TipoPlan1.Delete(tipoPlan);
+           _UnityOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 

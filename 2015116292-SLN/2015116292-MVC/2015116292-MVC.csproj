@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CAFBC2A4-5DED-4E05-B99D-6BE00E054DC1}</ProjectGuid>
+    <ProjectGuid>{1564355A-14B3-4DC1-AE99-3F70FD2704DE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -147,8 +147,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdmiLineasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TipoPlansController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,11 +191,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\AdmiLineas\Create.cshtml" />
-    <Content Include="Views\AdmiLineas\Delete.cshtml" />
-    <Content Include="Views\AdmiLineas\Details.cshtml" />
-    <Content Include="Views\AdmiLineas\Edit.cshtml" />
-    <Content Include="Views\AdmiLineas\Index.cshtml" />
+    <Content Include="Views\TipoPlans\Create.cshtml" />
+    <Content Include="Views\TipoPlans\Delete.cshtml" />
+    <Content Include="Views\TipoPlans\Details.cshtml" />
+    <Content Include="Views\TipoPlans\Edit.cshtml" />
+    <Content Include="Views\TipoPlans\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -242,7 +242,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56731</DevelopmentServerPort>
+          <DevelopmentServerPort>61009</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:56731/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
