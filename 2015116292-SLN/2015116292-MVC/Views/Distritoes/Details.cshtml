@@ -1,0 +1,27 @@
+﻿@model _2015116292_ENT.Entities.Distrito
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Distrito</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Distrito_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distrito_nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Distrito_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

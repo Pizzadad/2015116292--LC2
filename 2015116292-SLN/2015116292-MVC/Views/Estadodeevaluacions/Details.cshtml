@@ -1,0 +1,27 @@
+﻿@model _2015116292_ENT.Entities.Estadodeevaluacion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Estadodeevaluacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estadodeevaluacion_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estadodeevaluacion_estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Estadodeevaluacion_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
