@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2015116292_ENT.EntitiesDTO
 {
-    class TipoPlanDTO
+    public class TipoPlanDTO
     {
         public string TipoPlan_caracteristica { get; set; }
         public string TipoPlan_id { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2015116292_ENT.EntitiesDTO
 {
-    class tipolineaDTO
+    public class tipolineaDTO
     {
         public string tipolinea_id { get; set; }
         public string tipolinea_nombre { get; set; }

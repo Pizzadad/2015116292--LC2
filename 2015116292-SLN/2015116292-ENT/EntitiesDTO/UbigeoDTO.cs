@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2015116292_ENT.EntitiesDTO
 {
-    class UbigeoDTO
+    public class UbigeoDTO
     {
         public string Ubigeo_id { get; set; }
         public string Ubigeo_numero { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2015116292_ENT.EntitiesDTO
 {
-    class AdministradorEquipoDTO
+   public class AdministradorEquipoDTO
     {
         public string AdministradorEquipo_id { get; set; }
         public string AdministradorEquipo_modelo { get; set; }

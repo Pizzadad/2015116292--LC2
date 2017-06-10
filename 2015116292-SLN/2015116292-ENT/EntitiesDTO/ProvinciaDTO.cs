@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2015116292_ENT.EntitiesDTO
 {
-    class ProvinciaDTO
+    public class ProvinciaDTO
     {
         public string Provincia_id { get; set; }
         public string Provincia_nombre { get; set; }
