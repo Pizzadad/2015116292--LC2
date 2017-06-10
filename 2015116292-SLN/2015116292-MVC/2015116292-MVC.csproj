@@ -55,6 +55,15 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -108,6 +117,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -146,16 +158,27 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmiLineasController.cs" />
+    <Compile Include="Controllers\AdministradorEquipoesController.cs" />
+    <Compile Include="Controllers\CentrodeatencionsController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\DepartamentoesController.cs" />
+    <Compile Include="Controllers\DireccionsController.cs" />
     <Compile Include="Controllers\DistritoesController.cs" />
     <Compile Include="Controllers\EquipocelularsController.cs" />
     <Compile Include="Controllers\EstadodeevaluacionsController.cs" />
+    <Compile Include="Controllers\EvaluacionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\lineatelefonicasController.cs" />
+    <Compile Include="Controllers\PlansController.cs" />
+    <Compile Include="Controllers\ProvinciasController.cs" />
     <Compile Include="Controllers\TipodeevaluacionsController.cs" />
     <Compile Include="Controllers\tipolineasController.cs" />
     <Compile Include="Controllers\TipoPlansController.cs" />
     <Compile Include="Controllers\TrabajadorsController.cs" />
+    <Compile Include="Controllers\UbigeosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +261,56 @@
     <Content Include="Views\tipolineas\Details.cshtml" />
     <Content Include="Views\tipolineas\Edit.cshtml" />
     <Content Include="Views\tipolineas\Index.cshtml" />
+    <Content Include="Views\AdmiLineas\Create.cshtml" />
+    <Content Include="Views\AdmiLineas\Delete.cshtml" />
+    <Content Include="Views\AdmiLineas\Details.cshtml" />
+    <Content Include="Views\AdmiLineas\Edit.cshtml" />
+    <Content Include="Views\AdmiLineas\Index.cshtml" />
+    <Content Include="Views\AdministradorEquipoes\Create.cshtml" />
+    <Content Include="Views\AdministradorEquipoes\Delete.cshtml" />
+    <Content Include="Views\AdministradorEquipoes\Details.cshtml" />
+    <Content Include="Views\AdministradorEquipoes\Edit.cshtml" />
+    <Content Include="Views\AdministradorEquipoes\Index.cshtml" />
+    <Content Include="Views\Centrodeatencions\Create.cshtml" />
+    <Content Include="Views\Centrodeatencions\Delete.cshtml" />
+    <Content Include="Views\Centrodeatencions\Details.cshtml" />
+    <Content Include="Views\Centrodeatencions\Edit.cshtml" />
+    <Content Include="Views\Centrodeatencions\Index.cshtml" />
+    <Content Include="Views\Departamentoes\Create.cshtml" />
+    <Content Include="Views\Departamentoes\Delete.cshtml" />
+    <Content Include="Views\Departamentoes\Details.cshtml" />
+    <Content Include="Views\Departamentoes\Edit.cshtml" />
+    <Content Include="Views\Departamentoes\Index.cshtml" />
+    <Content Include="Views\Direccions\Create.cshtml" />
+    <Content Include="Views\Direccions\Delete.cshtml" />
+    <Content Include="Views\Direccions\Details.cshtml" />
+    <Content Include="Views\Direccions\Edit.cshtml" />
+    <Content Include="Views\Direccions\Index.cshtml" />
+    <Content Include="Views\Evaluacions\Create.cshtml" />
+    <Content Include="Views\Evaluacions\Delete.cshtml" />
+    <Content Include="Views\Evaluacions\Details.cshtml" />
+    <Content Include="Views\Evaluacions\Edit.cshtml" />
+    <Content Include="Views\Evaluacions\Index.cshtml" />
+    <Content Include="Views\lineatelefonicas\Create.cshtml" />
+    <Content Include="Views\lineatelefonicas\Delete.cshtml" />
+    <Content Include="Views\lineatelefonicas\Details.cshtml" />
+    <Content Include="Views\lineatelefonicas\Edit.cshtml" />
+    <Content Include="Views\lineatelefonicas\Index.cshtml" />
+    <Content Include="Views\Plans\Create.cshtml" />
+    <Content Include="Views\Plans\Delete.cshtml" />
+    <Content Include="Views\Plans\Details.cshtml" />
+    <Content Include="Views\Plans\Edit.cshtml" />
+    <Content Include="Views\Plans\Index.cshtml" />
+    <Content Include="Views\Provincias\Create.cshtml" />
+    <Content Include="Views\Provincias\Delete.cshtml" />
+    <Content Include="Views\Provincias\Details.cshtml" />
+    <Content Include="Views\Provincias\Edit.cshtml" />
+    <Content Include="Views\Provincias\Index.cshtml" />
+    <Content Include="Views\Ubigeos\Create.cshtml" />
+    <Content Include="Views\Ubigeos\Delete.cshtml" />
+    <Content Include="Views\Ubigeos\Details.cshtml" />
+    <Content Include="Views\Ubigeos\Edit.cshtml" />
+    <Content Include="Views\Ubigeos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,35 @@
+﻿@model _2015116292_ENT.Entities.lineatelefonica
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>lineatelefonica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._tipolinea.tipolinea_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._tipolinea.tipolinea_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lineatelefonica_numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lineatelefonica_numero)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.lineatelefonica_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

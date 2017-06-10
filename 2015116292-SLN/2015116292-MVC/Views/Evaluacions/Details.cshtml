@@ -1,0 +1,91 @@
+﻿@model _2015116292_ENT.Entities.Evaluacion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Evaluacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._Centrodeatencion.Centrodeatencion_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Centrodeatencion.Centrodeatencion_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Cliente.Cliente_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Cliente.Cliente_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Equipocelular.Equipocelular_modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Equipocelular.Equipocelular_modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Estadodeevaluacion.Estadodeevaluacion_estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Estadodeevaluacion.Estadodeevaluacion_estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._lineatelefonica.lineatelefonica_numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._lineatelefonica.lineatelefonica_numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Plan.Plan_descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Plan.Plan_descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Tipodeevaluacion.Tipodeevaluacion_tipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Tipodeevaluacion.Tipodeevaluacion_tipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model._Trabajador.Trabajador_nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Trabajador.Trabajador_nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evaluacion_caso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evaluacion_caso)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Evaluacion_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

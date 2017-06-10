@@ -40,6 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitiesDTO\AdmiLineaDTO.cs" />
+    <Compile Include="EntitiesDTO\AdministradorEquipoDTO.cs" />
+    <Compile Include="EntitiesDTO\CentrodeatencionDTO.cs" />
+    <Compile Include="EntitiesDTO\ClienteDTO.cs" />
+    <Compile Include="EntitiesDTO\DepartamentoDTO.cs" />
+    <Compile Include="EntitiesDTO\DireccionDTO.cs" />
+    <Compile Include="EntitiesDTO\DistritoDTO.cs" />
+    <Compile Include="EntitiesDTO\EquipocelularDTO.cs" />
+    <Compile Include="EntitiesDTO\EstadodeevaluacionDTO.cs" />
+    <Compile Include="EntitiesDTO\EvaluacionDTO.cs" />
+    <Compile Include="EntitiesDTO\lineatelefonicaDTO.cs" />
+    <Compile Include="EntitiesDTO\PlanDTO.cs" />
+    <Compile Include="EntitiesDTO\ProvinciaDTO.cs" />
+    <Compile Include="EntitiesDTO\TipodeevaluacionDTO.cs" />
+    <Compile Include="EntitiesDTO\tipolineaDTO.cs" />
+    <Compile Include="EntitiesDTO\TipoPlanDTO.cs" />
+    <Compile Include="EntitiesDTO\TrabajadorDTO.cs" />
+    <Compile Include="EntitiesDTO\UbigeoDTO.cs" />
     <Compile Include="Entities\AdmiLinea.cs" />
     <Compile Include="Entities\AdministradorEquipo.cs" />
     <Compile Include="Entities\Centrodeatencion.cs" />
