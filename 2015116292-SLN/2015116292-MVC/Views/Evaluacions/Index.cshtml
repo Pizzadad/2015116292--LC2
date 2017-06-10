@@ -1,0 +1,82 @@
+﻿@model IEnumerable<_2015116292_ENT.Entities.Evaluacion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model._Centrodeatencion.Centrodeatencion_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Cliente.Cliente_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Equipocelular.Equipocelular_modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Estadodeevaluacion.Estadodeevaluacion_estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._lineatelefonica.lineatelefonica_numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Plan.Plan_descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Tipodeevaluacion.Tipodeevaluacion_tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Trabajador.Trabajador_nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Evaluacion_caso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item._Centrodeatencion.Centrodeatencion_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Cliente.Cliente_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Equipocelular.Equipocelular_modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Estadodeevaluacion.Estadodeevaluacion_estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._lineatelefonica.lineatelefonica_numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Plan.Plan_descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Tipodeevaluacion.Tipodeevaluacion_tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Trabajador.Trabajador_nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Evaluacion_caso)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Evaluacion_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Evaluacion_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Evaluacion_id })
+        </td>
+    </tr>
+}
+
+</table>
