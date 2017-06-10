@@ -8,14 +8,26 @@ using System.Web;
 using System.Web.Mvc;
 using _2015116292_ENT.Entities;
 using _2015116292_PER;
+<<<<<<< HEAD
+=======
+using _2015116292_ENT.IRepositories;
+>>>>>>> ef65197bc0925033db014a30c30129038a31e0fe
 
 namespace _2015116292_MVC.Controllers
 {
     public class PlansController : Controller
     {
         private _2015116292_DbContext db = new _2015116292_DbContext();
+<<<<<<< HEAD
 
         // GET: Plans
+=======
+       // private readonly IUnityOfWork _UnityOfWork;
+        // GET: Plans
+
+       
+
+>>>>>>> ef65197bc0925033db014a30c30129038a31e0fe
         public ActionResult Index()
         {
             var plan1 = db.Plan1.Include(p => p._TipoPlan);
